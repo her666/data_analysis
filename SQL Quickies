@@ -1,0 +1,3 @@
+select INET6_NTOA(src_ip), count(INET6_NTOA(src_ip)) as 'Counted Attempts' from event where userdata2='SSHD brute force trying to get access to the system.' 
+  group by INET6_NTOA(src_ip) desc 
+  order by count( INET6_NTOA(src_ip)) desc limit 25;
