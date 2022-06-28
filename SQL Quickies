@@ -2,6 +2,13 @@ select INET6_NTOA(src_ip), count(INET6_NTOA(src_ip)) as 'Counted Attempts' from 
   group by INET6_NTOA(src_ip) desc 
   order by count( INET6_NTOA(src_ip)) desc limit 25;
 
+#get size of tables
+select TABLE_NAME, data_length from TABLES group by data_length desc;
+
+
+
+
+
 
 import MySQLdb
 import csv
